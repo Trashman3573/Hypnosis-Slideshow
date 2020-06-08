@@ -43,7 +43,8 @@ Partial Class Form1
         Me.Button1.Location = New System.Drawing.Point(12, 466)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
+        Me.Button1.TabIndex = 0
+        Me.Button1.TabStop = False
         Me.Button1.Text = "Directory..."
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -61,7 +62,8 @@ Partial Class Form1
         Me.Button2.Location = New System.Drawing.Point(93, 466)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
+        Me.Button2.TabIndex = 0
+        Me.Button2.TabStop = False
         Me.Button2.Text = "Start"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -71,12 +73,14 @@ Partial Class Form1
         'NumericUpDown1
         '
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.NumericUpDown1.InterceptArrowKeys = False
         Me.NumericUpDown1.Location = New System.Drawing.Point(254, 469)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {3600000, 0, 0, 0})
         Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(68, 20)
-        Me.NumericUpDown1.TabIndex = 5
+        Me.NumericUpDown1.TabIndex = 0
+        Me.NumericUpDown1.TabStop = False
         Me.NumericUpDown1.Value = New Decimal(New Integer() {1000, 0, 0, 0})
         '
         'Label1
@@ -93,7 +97,8 @@ Partial Class Form1
         Me.CheckBox1.Location = New System.Drawing.Point(351, 470)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(83, 17)
-        Me.CheckBox1.TabIndex = 7
+        Me.CheckBox1.TabIndex = 0
+        Me.CheckBox1.TabStop = False
         Me.CheckBox1.Text = "Transparent"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -101,10 +106,12 @@ Partial Class Form1
         '
         Me.NumericUpDown2.Enabled = False
         Me.NumericUpDown2.Increment = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.NumericUpDown2.InterceptArrowKeys = False
         Me.NumericUpDown2.Location = New System.Drawing.Point(451, 469)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(44, 20)
-        Me.NumericUpDown2.TabIndex = 8
+        Me.NumericUpDown2.TabIndex = 0
+        Me.NumericUpDown2.TabStop = False
         Me.NumericUpDown2.Value = New Decimal(New Integer() {30, 0, 0, 0})
         '
         'Label2
@@ -113,7 +120,7 @@ Partial Class Form1
         Me.Label2.Location = New System.Drawing.Point(211, 471)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 13)
-        Me.Label2.TabIndex = 9
+        Me.Label2.TabIndex = 0
         Me.Label2.Text = "Delay:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '

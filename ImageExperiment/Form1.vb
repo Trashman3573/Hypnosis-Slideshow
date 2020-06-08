@@ -116,16 +116,24 @@ Public Class Form1
     Dim pPreSize As Size
 
     Private Sub Slide(direction As Boolean)
-        PictureBox1.ImageLocation = imgList.Item(imgIndex)
-        Label1.Text = imgIndex + 1.ToString & " / " & imgList.Count + 1
+
         If direction = True Then
-            imgIndex += 1
+            If imgIndex = imgList.Count - 1 Then
+                listShuffle()
+                imgIndex = 0
+            Else
+                imgIndex += 1
+            End If
+
         ElseIf direction = False Then
-            If imgIndex > 0 Then
+            If imgIndex >= 1 Then
                 imgIndex -= 1
+            ElseIf imgIndex = 0 Then
+                imgIndex = imgList.Count - 1
             End If
         End If
-
+        PictureBox1.ImageLocation = imgList.Item(imgIndex)
+        Label1.Text = imgIndex + 1.ToString & " / " & imgList.Count
     End Sub
 
     Private Sub FullScreenMode(state As Boolean)
@@ -242,11 +250,13 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        If e.KeyCode = Keys.Left Then
-            Slide(False)
-        End If
-        If e.KeyCode = Keys.Right Then
-            Slide(True)
+        If imgList.Count > 0 Then
+            If e.KeyCode = Keys.Left Then
+                Slide(False)
+            End If
+            If e.KeyCode = Keys.Right Then
+                Slide(True)
+            End If
         End If
         If e.KeyCode = Keys.Escape Then
             If FullscreenModeBool = True Then
