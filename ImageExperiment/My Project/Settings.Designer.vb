@@ -56,18 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property DeafultDir() As String
-            Get
-                Return CType(Me("DeafultDir"),String)
-            End Get
-            Set
-                Me("DeafultDir") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("30")>  _
         Public Property DefaultTra() As Short
             Get
                 Return CType(Me("DefaultTra"),Short)
@@ -78,13 +67,26 @@ Namespace My
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("500")>  _
         Public Property DefaultSpeed() As Integer
             Get
                 Return CType(Me("DefaultSpeed"),Integer)
             End Get
             Set
                 Me("DefaultSpeed") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DeafultDir() As String
+            Get
+                Return CType(Me("DeafultDir"),String)
+            End Get
+            Set
+                Me("DeafultDir") = value
             End Set
         End Property
     End Class

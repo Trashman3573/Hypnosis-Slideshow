@@ -15,7 +15,7 @@ Public Class Form1
     Dim Wdirectory As String
     Dim speed As Integer
     Dim transparency As Short
-
+    Dim saved As Boolean = False
 
     Dim imgType() As String = {"*.jpg", "*.png", "*.gif"}
     Dim flatList As List(Of String) = New List(Of String)
@@ -35,12 +35,13 @@ Public Class Form1
         Wdirectory = My.Settings.DeafultDir
         speed = My.Settings.DefaultSpeed
         transparency = My.Settings.DefaultTra
+        Console.WriteLine(speed & "/" & transparency & "/" & Wdirectory)
         Button2.Enabled = False
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         NumericUpDown2.Minimum = 1
         NumericUpDown2.Maximum = 100
         NumericUpDown2.Value = transparency
-        NumericUpDown1.Value = speed 
+        NumericUpDown1.Value = speed
 
         Randomize()
     End Sub
@@ -115,6 +116,8 @@ Public Class Form1
     Dim pPreSize As Size
 
     Private Sub Slide(direction As Boolean)
+        PictureBox1.ImageLocation = imgList.Item(imgIndex)
+        Label1.Text = imgIndex + 1.ToString & " / " & imgList.Count + 1
         If direction = True Then
             imgIndex += 1
         ElseIf direction = False Then
@@ -122,8 +125,7 @@ Public Class Form1
                 imgIndex -= 1
             End If
         End If
-        PictureBox1.ImageLocation = imgList.Item(imgIndex)
-        Label1.Text = imgIndex + 1.ToString & " / " & imgList.Count + 1
+
     End Sub
 
     Private Sub FullScreenMode(state As Boolean)
@@ -190,6 +192,7 @@ Public Class Form1
             Paused = True
         ElseIf state = "start" Then
             speed = NumericUpDown1.Value
+            transparency = NumericUpDown2.Value
             Timer1.Interval = speed
             Timer1.Start()
             Button2.Text = "Stop"
@@ -197,6 +200,7 @@ Public Class Form1
         ElseIf state = "toggle" Then
             If Paused = True Then
                 speed = NumericUpDown1.Value
+                transparency = NumericUpDown2.Value
                 Timer1.Interval = speed
                 Timer1.Start()
                 Button2.Text = "Stop"
@@ -252,13 +256,14 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        speed = NumericUpDown1.Value
         transparency = NumericUpDown2.Value
         My.Settings.DefaultTra = transparency
-    End Sub
+            My.Settings.DefaultSpeed = speed
+            My.Settings.DeafultDir = Wdirectory
+        My.Settings.Save()
 
-    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
-        speed = NumericUpDown1.Value
-        My.Settings.DefaultSpeed = speed
     End Sub
 End Class

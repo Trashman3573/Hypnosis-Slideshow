@@ -2,14 +2,15 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="DeafultDir" Type="System.String" Scope="User">
-      <Value Profile="(Default)"> </Value>
-    </Setting>
     <Setting Name="DefaultTra" Type="System.Int16" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">30</Value>
     </Setting>
     <Setting Name="DefaultSpeed" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="DeafultDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">
+                </Value>
     </Setting>
   </Settings>
 </SettingsFile>
