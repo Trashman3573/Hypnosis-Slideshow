@@ -56,37 +56,97 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("30")>  _
-        Public Property DefaultTra() As Short
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property mainDirectory() As String
             Get
-                Return CType(Me("DefaultTra"),Short)
+                Return CType(Me("mainDirectory"),String)
             End Get
             Set
-                Me("DefaultTra") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("500")>  _
-        Public Property DefaultSpeed() As Integer
-            Get
-                Return CType(Me("DefaultSpeed"),Integer)
-            End Get
-            Set
-                Me("DefaultSpeed") = value
+                Me("mainDirectory") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property DeafultDir() As String
+        Public Property altDirectory() As String
             Get
-                Return CType(Me("DeafultDir"),String)
+                Return CType(Me("altDirectory"),String)
             End Get
             Set
-                Me("DeafultDir") = value
+                Me("altDirectory") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property brainwashMode() As Boolean
+            Get
+                Return CType(Me("brainwashMode"),Boolean)
+            End Get
+            Set
+                Me("brainwashMode") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("30")>  _
+        Public Property transparency() As Byte
+            Get
+                Return CType(Me("transparency"),Byte)
+            End Get
+            Set
+                Me("transparency") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1000")>  _
+        Public Property speed() As Integer
+            Get
+                Return CType(Me("speed"),Integer)
+            End Get
+            Set
+                Me("speed") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("15")>  _
+        Public Property deviationInterval() As Integer
+            Get
+                Return CType(Me("deviationInterval"),Integer)
+            End Get
+            Set
+                Me("deviationInterval") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property maxDeviation() As Integer
+            Get
+                Return CType(Me("maxDeviation"),Integer)
+            End Get
+            Set
+                Me("maxDeviation") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("5")>  _
+        Public Property deviation() As Integer
+            Get
+                Return CType(Me("deviation"),Integer)
+            End Get
+            Set
+                Me("deviation") = value
             End Set
         End Property
     End Class

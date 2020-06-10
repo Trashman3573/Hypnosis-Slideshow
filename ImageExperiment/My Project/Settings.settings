@@ -2,15 +2,29 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="DefaultTra" Type="System.Int16" Scope="User">
+    <Setting Name="mainDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="altDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="brainwashMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="transparency" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">30</Value>
     </Setting>
-    <Setting Name="DefaultSpeed" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">500</Value>
+    <Setting Name="speed" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
     </Setting>
-    <Setting Name="DeafultDir" Type="System.String" Scope="User">
-      <Value Profile="(Default)">
-                </Value>
+    <Setting Name="deviationInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="maxDeviation" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="deviation" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
     </Setting>
   </Settings>
 </SettingsFile>
