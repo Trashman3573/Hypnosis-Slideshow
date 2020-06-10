@@ -16,8 +16,12 @@
         controlsControl()
     End Sub
     Private Sub Form2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        My.Settings.mainDirectory = textBox1.Text
-        My.Settings.altDirectory = textBox2.Text
+        If textBox1.Text <> ". . ." Then
+            My.Settings.mainDirectory = textBox1.Text
+        End If
+        If textBox1.Text <> ". . ." Then
+            My.Settings.altDirectory = textBox2.Text
+        End If
         My.Settings.speed = Convert.ToInt32(numericUpDown1.Value)
         My.Settings.deviationInterval = Convert.ToInt32(numericUpDown3.Value)
         My.Settings.transparency = Convert.ToByte(numericUpDown2.Value)
