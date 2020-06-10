@@ -22,6 +22,7 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.label1 = New System.Windows.Forms.Label()
         Me.textBox1 = New System.Windows.Forms.TextBox()
@@ -33,17 +34,17 @@ Partial Class Form2
         Me.checkBox1 = New System.Windows.Forms.CheckBox()
         Me.label2 = New System.Windows.Forms.Label()
         Me.textBox2 = New System.Windows.Forms.TextBox()
-        Me.label3 = New System.Windows.Forms.Label()
-        Me.numericUpDown3 = New System.Windows.Forms.NumericUpDown()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.numericUpDown3 = New System.Windows.Forms.NumericUpDown()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.numericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.numericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -198,6 +199,27 @@ Partial Class Form2
         Me.textBox2.Text = ". . ."
         Me.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'Label7
+        '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(23, 181)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(102, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Maximum Deviation:"
+        '
+        'NumericUpDown4
+        '
+        Me.NumericUpDown4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDown4.Location = New System.Drawing.Point(133, 178)
+        Me.NumericUpDown4.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown4.Name = "NumericUpDown4"
+        Me.NumericUpDown4.Size = New System.Drawing.Size(124, 20)
+        Me.NumericUpDown4.TabIndex = 12
+        Me.NumericUpDown4.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        '
         'label3
         '
         Me.label3.Anchor = System.Windows.Forms.AnchorStyles.Right
@@ -221,27 +243,6 @@ Partial Class Form2
         Me.numericUpDown3.Size = New System.Drawing.Size(124, 20)
         Me.numericUpDown3.TabIndex = 10
         Me.numericUpDown3.Value = New Decimal(New Integer() {15, 0, 0, 0})
-        '
-        'Label7
-        '
-        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(23, 181)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(102, 13)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Maximum Deviation:"
-        '
-        'NumericUpDown4
-        '
-        Me.NumericUpDown4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDown4.Location = New System.Drawing.Point(133, 178)
-        Me.NumericUpDown4.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.Size = New System.Drawing.Size(124, 20)
-        Me.NumericUpDown4.TabIndex = 12
-        Me.NumericUpDown4.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
         'Label8
         '
@@ -270,14 +271,15 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(282, 223)
         Me.Controls.Add(Me.TableLayoutPanel2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form2"
         Me.Text = "Settings(Auto-Saved)"
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         CType(Me.numericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.numericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
