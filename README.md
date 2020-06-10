@@ -11,7 +11,7 @@ Delay between images in milliseconds.
 ### Transparency:
 % of transparency. 0 for for completely opaque and 100 for invisible. 
 ### Brainwash Mode:
-Allows you to set a second directory from which an image will be shown at specified intervals.
+Allows you to set a second directory from which a "brainwash" image will be shown at specified intervals.
 ### Deviation:
 How often the brainwash images are shown. i.e "5" would make every 5th image a "brainwash" image. 
 ### Deviation Iinterval:
