@@ -130,14 +130,14 @@ Public Class Form1
                 Else
                     devIndex += 1
                 End If
-                PictureBox1.ImageLocation = devList.Item(devIndex)
+                resizePic(devList.Item(devIndex))
             Else
                 If mainIndex = mainList.Count - 1 Then
                     listShuffle(True)
                 Else
                     mainIndex += 1
                 End If
-                PictureBox1.ImageLocation = mainList.Item(mainIndex)
+                resizePic(mainList.Item(mainIndex))
                 Label1.Text = mainIndex + 1.ToString & " / " & mainList.Count
             End If
         Else
@@ -146,9 +146,38 @@ Public Class Form1
             Else
                 mainIndex += 1
             End If
-            PictureBox1.ImageLocation = mainList.Item(mainIndex)
-            Label1.Text = mainIndex + 1.ToString & " / " & mainList.Count
+
+            resizePic(mainList.Item(mainIndex))
         End If
+    End Sub
+    Private Sub resizePic(image As String)
+        Dim bmp As Bitmap = New Bitmap(image)
+        Dim Scale As Decimal
+        Console.WriteLine(bmp.Width)
+        If Math.Abs(bmp.Width / screen.Bounds.Width) > Math.Abs(bmp.Height / screen.Bounds.Height) Then
+            Scale = screen.Bounds.Width / bmp.Width
+        Else
+            Scale = screen.Bounds.Height / bmp.Height
+        End If
+
+        Dim bm_dest As New Bitmap(
+        CInt(bmp.Width * Scale),
+        CInt(bmp.Height * Scale))
+
+        Dim gr_dest As Graphics = Graphics.FromImage(bm_dest)
+
+        gr_dest.DrawImage(bmp, 0, 0,
+        bm_dest.Width + 1,
+        bm_dest.Height + 1)
+        PictureBox1.Size = New Size(bm_dest.Width, bm_dest.Height)
+        Me.Size = New Size(bm_dest.Width, bm_dest.Height)
+        Me.Location = New Point(screen.Bounds.Width / 2 - Me.Size.Width / 2, screen.Bounds.Height / 2 - Me.Size.Height / 2)
+
+        'Console.WriteLine(bm_dest.Width & "|" & bm_dest.Height & "|" & Scale)
+        PictureBox1.Image.Dispose()
+        PictureBox1.Image = bm_dest
+        gr_dest.Dispose()
+        bmp.Dispose()
     End Sub
 
     Private Sub FullScreenMode(state As Boolean)
@@ -165,12 +194,14 @@ Public Class Form1
 
             Me.FormBorderStyle = FormBorderStyle.None
             Me.BackColor = Color.Black
-            Me.Size = New Size(screen.Bounds.Width, screen.Bounds.Height)
-            Me.Location = New Point(screen.Bounds.X, screen.Bounds.Y)
+            'Me.Size = New Size(screen.Bounds.Width, screen.Bounds.Height)
+            'Me.Location = New Point(screen.Bounds.X, screen.Bounds.Y)
 
             PictureBox1.BorderStyle = BorderStyle.None
             PictureBox1.Location = New Point(0, 0)
             PictureBox1.Size = New Size(screen.Bounds.Width, screen.Bounds.Height)
+            PictureBox1.SizeMode = PictureBoxSizeMode.Normal
+
 
             If My.Settings.transparency > 0 Then
                 InitialStyle = GetWindowLong(Me.Handle, -20)
@@ -192,9 +223,11 @@ Public Class Form1
             Me.Size = preSize
             Me.Location = preLoc
             Me.TopMost = False
+            Me.Opacity = 100
 
             PictureBox1.Location = New Point(5, 5)
             PictureBox1.Size = pbPreSize
+            PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
             FullscreenModeBool = False
         End If
     End Sub
@@ -212,8 +245,9 @@ Public Class Form1
         End If
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        devCount -= 1
+        'devCount -= 1
         FullScreenMode(True)
+        Slide()
         playToggle(True)
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
